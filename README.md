@@ -9,3 +9,5 @@ Hey there! This is my personal repository for the event 'Advent of Code 2021'. I
 - Day 3 (C)
 - Day 4 (C)
 - Day 5 (C)
+- Day 6 (C)
+- Day 7 (C)
