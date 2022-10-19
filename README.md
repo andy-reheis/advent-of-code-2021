@@ -14,3 +14,4 @@ Hey there! This is my personal repository for the event 'Advent of Code 2021'. I
 - Day 8 (C) but very messy solution
 - Day 9 (C)
 - Day 10 (Python)
+- Day 11 (Python)
