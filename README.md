@@ -16,3 +16,5 @@ Hey there! This is my personal repository for the event 'Advent of Code 2021'. I
 - Day 10 (Python)
 - Day 11 (Python)
 - Day 12 (Python)
+- Day 13 (Python)
+- Day 14 (Python)
