@@ -25,7 +25,7 @@ def get_end(data):
     return (0, 0), (len(data) - 1, len(data[0]) - 1)
 
 
-def get_manhattan_distance(chiton_map, node):
+def get_neighbours(chiton_map, node):
     max_x = len(chiton_map) - 1
     max_y = len(chiton_map[0]) - 1
 
@@ -53,7 +53,7 @@ def a_star(chiton_map, start_node, end_node):
             g_score[(y, x)] = Inf
 
     g_score[start_node] = 0
-    heapq.heappush(open_queue, (get_cityblock(start_node, end_node), start_node))
+    heapq.heappush(open_queue, (get_manhattan_distance(start_node, end_node), start_node))
     while open_queue:
         _, node = heapq.heappop(open_queue)
 
@@ -69,7 +69,7 @@ def a_star(chiton_map, start_node, end_node):
         elif node in closed_queue:
             continue
         else:
-            neighbours = get_manhattan_distance(chiton_map, node)
+            neighbours = get_neighbours(chiton_map, node)
 
             for neighbour in neighbours:
                 if neighbour in closed_queue:
@@ -82,12 +82,12 @@ def a_star(chiton_map, start_node, end_node):
                 if candidate_g <= g_score[neighbour]:
                     g_score[neighbour] = candidate_g
                     parents[neighbour] = node
-                    f = get_cityblock(neighbour, end_node) + candidate_g
+                    f = get_manhattan_distance(neighbour, end_node) + candidate_g
                     heapq.heappush(open_queue, (f, neighbour))
 
             closed_queue.add(node)
 
-def get_cityblock(a, b):
+def get_manhattan_distance(a, b):
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
 
 
